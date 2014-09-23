@@ -1,0 +1,4 @@
+---
+name: testproxy
+buildpack: https://github.com/cloudfoundry/nodejs-buildpack
+#buildpack: https://github.com/jcooklin/heroku-buildpack-nodejs-grunt
