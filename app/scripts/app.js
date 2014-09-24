@@ -10,6 +10,7 @@
  */
 angular
   .module('proxytestApp', [
+    //'ui.bootstrap',
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -26,6 +27,18 @@ angular
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
+      })
+      .when('/opportunities', {
+        templateUrl: 'views/opportunities.html',
+        controller: 'OpportunityCtrl'
+      })
+      .when('/organizations', {
+        templateUrl: 'views/organizations.html',
+        controller: 'OrganizationCtrl'
+      })
+      .when("/referrals/:id", {
+        templateUrl: 'views/referrals.html',
+        controller: 'OrganizationCtrl'
       })
       .otherwise({
         redirectTo: '/'

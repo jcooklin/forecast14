@@ -1,0 +1,7 @@
+
+<div class="container=fluid" ng-repeat="opportunity in opportunities['opportunities']">
+  <div class="row">
+    <div class="col-md-8"><a href="http://odca.stage.volunteermatch.org/search/opp{{opportunity['id']}}.jsp">{{opportunity['title']}}</div></a>
+    <div class="col-md-4">{{opportunity['location']['city']}}
+  </div>
+</div>

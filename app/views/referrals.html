@@ -1,0 +1,7 @@
+
+<div class="container=fluid" ng-repeat="referral in referrals['referrals']">
+  <div ng-if="referral['member']['primaryKey'] != null" >
+    <div class="col-md-4">{{referral['member']['primaryKey'] || "NONE"}}</div>
+    <div class="col-md-8">{{referral['comments'] || "no comment"}}</div>
+  </div>
+</div>
