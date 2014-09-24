@@ -60,14 +60,17 @@ function getAuthenticationHeadersForWSSE(apiKey, apiUsername, apiAuthType, usern
     wsseToken += "Actor=\"" + username + "\"";
   }
 
-  return {
-   "X-WSSE" : wsseToken,
-   "Authorization" : "WSSE profile=\"UsernameToken\""
-  };
+  // return {
+  //  "X-WSSE" : wsseToken,
+  //  "Authorization" : "WSSE profile=\"UsernameToken\""
+  // };
+  console.log("generating wsse token!");
+  return wsseToken;
 };
 
 var express = require('express'),
     proxy = require('json-proxy');
+    header_proxy = require('connect-header');
 
 var app = express(),
     logger = require('morgan'),
@@ -75,12 +78,17 @@ var app = express(),
 
 //app.use(favicon(false));
 app.use(logger('dev'));
+app.use(function(req, res, next) {
+  req.headers["Authorization"] = "WSSE profile=\"UsernameToken\"";
+  req.headers["X-WSSE"] = getAuthenticationHeadersForWSSE('a483313bf90678ae438c397171a5e00f', 'odca_site_1');
+  return next();
+});
 app.use(proxy.initialize({
   proxy: {
     forward: {
         '/api/': 'http://odca.stage.volunteermatch.org'
-    },
-    headers: getAuthenticationHeadersForWSSE('a483313bf90678ae438c397171a5e00f', 'odca_site_1')
+    }//,
+    // headers: getAuthenticationHeadersForWSSE('a483313bf90678ae438c397171a5e00f', 'odca_site_1')
   }
 }));
 app.use(express.static(__dirname));

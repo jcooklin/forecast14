@@ -9,6 +9,15 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 // .row :nth-child(odd){
 //   background-color: #aaaaaa;}
 
+html {
+  //background: url(http://filmadelphia.org/wp-content/uploads/Volunteer-Hands-Large.jpg) no-repeat center center fixed; 
+  background: url(http://www.alternativeegypt.com/Images/Volunteering-in-Egypt.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .rubysky {
   background-color: #dcdcdc;
 }
@@ -22,6 +31,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 /* Space out content a bit */
 body {
+  background: transparent;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -62,11 +72,16 @@ body {
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
+  background-color: rgba(255, 255, 255, 0.9);
 
   .btn {
     font-size: 21px;
     padding: 14px 24px;
   }
+}
+
+.content {
+  text-align: left;
 }
 
 /* Supporting marketing content */

@@ -1,7 +1,10 @@
-
-<div class="container=fluid" ng-repeat="referral in referrals['referrals']">
-  <div ng-if="referral['member']['primaryKey'] != null" >
-    <div class="col-md-4">{{referral['member']['primaryKey'] || "NONE"}}</div>
-    <div class="col-md-8">{{referral['comments'] || "no comment"}}</div>
+  <div class="jumbotron content">
+  <div class="container-fluid" ng-repeat="item in referrals">
+    <div ng-if="item['member']['primaryKey'] != null" >
+      <div class="row" style="border-bottom: 1px solid #aaa;">
+        <div class="col-md-4">{{item['member']['primaryKey'] || "NONE"}}</div>
+        <div class="col-md-8">{{item['comments'] || "no comment"}}</div>
+      </div>
+    </div>
   </div>
-</div>
+  </div>

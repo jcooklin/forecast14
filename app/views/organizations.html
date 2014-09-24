@@ -1,8 +1,9 @@
-
-<div class="container=fluid" ng-repeat="organization in organizations['organizations']">
+<div class="jumbotron content">
+<div class="container-fluid" ng-repeat="organization in organizations">
   <div class="row">
-    <div class="col-md-7"><a href="http://odca.stage.volunteermatch.org/results/org_detail.jsp?orgid={{organization['id']}}">{{organization['name']}}</a></div>
-    <div class="col-md-2">{{organization['location']['city']}}</div>
+    <div class="col-md-6"><a href="http://odca.stage.volunteermatch.org/results/org_detail.jsp?orgid={{organization['id']}}">{{organization['name']}}</a></div>
+    <div class="col-md-3">{{organization['location']['city']}}</div>
     <div class="col-md-3"><a href="#/referrals/{{organization['id']}}">view volunteers</a></div>
   </div>
+</div>
 </div>
